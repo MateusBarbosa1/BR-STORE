@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+}
+
+header {
+  position: fixed;
+  background: #f9f6f2;
+  width: 100%;
+  box-shadow: 0px 10px 30px -18px rgba(0, 0, 0, 0.75);
+  padding: 20px 4%;
+}
+.top-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+  width: 200px;
+}
+.search-mobile {
+  display: none;
+}
+.search {
+  width: 40%;
+}
+.search input {
+  outline: none;
+  border: 1.5px solid #8c8c8c;
+  color: black;
+  padding: 10px 20px;
+  background-image: url("../images/icons-static/search.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  border-radius: 16px;
+  width: 100%;
+}
+.search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 14px;
+  width: 14px;
+  background-size: contain; /* Ajuste para garantir que o ícone seja visível */
+}
+.options {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+.login-option {
+  display: flex;
+  align-items: center;
+  color: black;
+}
+.login-option span {
+  cursor: pointer;
+  font-size: 32px;
+  padding-right: 5px;
+}
+.login-option a {
+  text-decoration: none;
+  color: black;
+  font-size: 15px;
+}
+.login-option a:hover {
+  font-weight: bold;
+  transition: 1s;
+}
+.carrinho-option {
+  display: flex;
+  padding: 0 20px;
+  align-items: center;
+}
+.carrinho-option span {
+  cursor: pointer;
+  color: black;
+  font-size: 26px;
+}
+.menu {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0 1px 0;
+  margin-left: 30px;
+}
+.menu a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  padding: 3px 20px;
+  margin-bottom: 5px;
+}
+.menu a:hover {
+  transition: 0.5s;
+  font-weight: bold;
+}
+.icon-mobile {
+  display: none;
+}
+.icon-mobile span {
+  color: black;
+  font-size: 30px;
+}
+.menu .close {
+  display: none;
+  position: absolute;
+  color: black;
+  font-size: 30px;
+  top: 4%;
+  left: 4%;
+}
+.menu .login-option {
+  display: none;
+}
+@media screen and (max-width: 770px) {
+  .logo img {
+    width: 170px;
+  }
+  .top-header {
+    justify-content: space-around;
+  }
+  .search-mobile {
+    margin: 10px 2.5%;
+    display: flex;
+    width: 95%;
+  }
+  .search-mobile input {
+    outline: none;
+    border: 1.5px solid #8c8c8c;
+    color: black;
+    padding: 10px 20px;
+    background-image: url("../images/icons-static/search.png");
+    background-size: 20px;
+    background-repeat: no-repeat;
+    background-position: 95% center;
+    width: 100%;
+  }
+  .search-mobile input::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    background-size: contain; /* Ajuste para garantir que o ícone seja visível */
+  }
+  .options {
+    display: none;
+  }
+  .menu a {
+    padding: 40px 0;
+    font-weight: 600;
+  }
+  .menu .close {
+    display: flex;
+  }
+  .menu span {
+    display: flex;
+  }
+  .search {
+    display: none;
+  }
+  .menu {
+    display: none;
+  }
+  .menu-selected {
+    z-index: 200;
+    position: fixed;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    padding: 20% 0;
+    left: 0;
+    background: #fff;
+    display: flex; /* mude para flex para garantir que os itens sejam empilhados verticalmente */
+    flex-direction: column; /* empilhe os itens verticalmente */
+    justify-content: flex-start;
+    align-items: center;
+    animation: slideIn 0.5s forwards; /* Definindo a animação */
+    transform: translateX(-100%); /* Move o menu para fora da tela à esquerda */
+  }
+  .menu .login-option {
+    display: flex;
+  }
+  .login-option a {
+    padding-top: 44px;
+    font-weight: normal;
+  }
+  .icon-mobile {
+    display: flex;
+  }
+  @keyframes slideIn {
+    from {
+      transform: translateX(-100%); /* Define a posição inicial fora da tela */
+    }
+    to {
+      transform: translateX(0); /* Define a posição final na tela */
+    }
+  }
+  @keyframes slideOut {
+    from {
+      transform: translateX(0); /* Define a posição inicial na tela */
+    }
+    to {
+      transform: translateX(
+        -100%
+      ); /* Define a posição final fora da tela à esquerda */
+    }
+  }
+}
