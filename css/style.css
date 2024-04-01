@@ -9,13 +9,19 @@ body {
   height: 100%;
   font-family: "Open Sans", sans-serif;
 }
-
+#selected {
+  font-weight: bold;
+}
 header {
   position: fixed;
+  z-index: 10;
   background: #f9f6f2;
   width: 100%;
   box-shadow: 0px 10px 30px -18px rgba(0, 0, 0, 0.75);
   padding: 20px 4%;
+}
+span {
+  cursor: pointer;
 }
 .top-header {
   display: flex;
@@ -42,6 +48,10 @@ header {
   background-position: 95% center;
   border-radius: 16px;
   width: 100%;
+}
+.carousel img {
+  max-width: 100%;
+  max-height: 600px;
 }
 .search input::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -118,7 +128,157 @@ header {
 .menu .login-option {
   display: none;
 }
+.carousel {
+  padding-top: 150px;
+}
+.destaques {
+  display: flex;
+  flex-wrap: wrap;
+  width: 95%;
+  margin: 30px 2.5%;
+}
+.destaque {
+  display: flex;
+  width: 31%;
+  align-items: center;
+  background: rgba(189, 189, 189, 0.3);
+  margin: 1%;
+}
+.destaque img {
+  width: 50%;
+  padding: 20px;
+}
+.destaque .texto-destaque {
+  text-align: center;
+  width: 50%;
+}
+.texto-destaque h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.texto-destaque button {
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 20px;
+}
+.texto-destaque button:hover {
+  padding: 7px 22px;
+  font-size: 17px;
+  transition: 0.5s;
+}
+.produtos {
+  margin: 30px 2.5%;
+  width: 95%;
+}
+.titulo-roupas {
+  margin: 30px 0;
+}
+.titulo-roupas h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+.roupas-destaque {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.produto-single {
+  width: 21%;
+  border: 1px solid #cacaca;
+  text-align: center;
+  margin: 2%;
+}
+.produto-single .img-produto {
+  width: 100%;
+}
+.produto-single .img-produto img {
+  width: 100%;
+}
+.produto-single h2 {
+  color: rgb(41, 41, 41);
+  font-size: 19px;
+}
+.produto-single h3 {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+}
+.produto-single button {
+  border: none;
+  background-color: black;
+  border-radius: 19px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 5px 20px;
+  margin: 0 0 20px 0;
+}
+center button {
+  border: none;
+  background-color: black;
+  border-radius: 19px;
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 30px;
+  margin: 20px 0;
+}
+.titulo-relogio {
+  margin: 20px 0;
+}
+.titulo-relogio h2 {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 50px;
+}
+.relogios-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.instagram {
+  width: 100%;
+  margin: 6% 0;
+  text-align: center;
+}
+.instagram img {
+  width: 30px;
+}
+.instagram a {
+  font-size: 19px;
+  color: black;
+  padding-left: 5px;
+  padding-top: 8px;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+footer {
+  margin: 0;
+  padding: 30px 0 10px 0;
+  width: 100%;
+  background: black;
+  color: white;
+  text-align: center;
+}
+@media screen and (max-width: 980px) {
+  .destaque {
+    width: 48%;
+  }
+  .produto-single {
+    width: 29%;
+  }
+}
 @media screen and (max-width: 770px) {
+  .produto-single {
+    width: 46%;
+  }
   .logo img {
     width: 170px;
   }
@@ -151,7 +311,7 @@ header {
     display: none;
   }
   .menu a {
-    padding: 40px 0;
+    padding: 20px 0;
     font-weight: 600;
   }
   .menu .close {
@@ -185,10 +345,11 @@ header {
     transform: translateX(-100%); /* Move o menu para fora da tela à esquerda */
   }
   .menu .login-option {
+    padding-top: 30px;
     display: flex;
   }
   .login-option a {
-    padding-top: 44px;
+    padding-top: 25px;
     font-weight: normal;
   }
   .icon-mobile {
@@ -211,5 +372,28 @@ header {
         -100%
       ); /* Define a posição final fora da tela à esquerda */
     }
+  }
+}
+@media screen and (max-width: 650px) {
+  .destaque {
+    width: 98%;
+  }
+}
+@media screen and (max-width: 440px) {
+  .titulo-roupas h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 37px;
+  }
+  .titulo-relogio h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 37px;
+  }
+  .produto-single {
+    width: 97%;
+    height: 10%;
   }
 }
